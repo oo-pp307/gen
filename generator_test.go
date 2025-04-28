@@ -2,12 +2,9 @@ package gen
 
 import (
 	"context"
-	"fmt"
-	"os"
 	"testing"
 	"time"
 
-	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/callbacks"
 	"gorm.io/gorm/clause"
@@ -313,22 +310,3 @@ var teacher = func() Teacher {
 	t.UseModel(TeacherRaw{})
 	return t
 }()
-
-func TestGenerate(t *testing.T) {
-	dbUser := os.Getenv("DB_USER")
-	dbPwd := os.Getenv("DB_PASSWORD")
-	dbHost := os.Getenv("DB_HOST")
-	dsn := fmt.Sprintf("%s:%s@tcp(%s:3306)/minhuisheng20250411?timeout=2s&readTimeout=2s&writeTimeout=2s&parseTime=true&loc=Local&charset=utf8mb4", dbUser, dbPwd, dbHost)
-	db, _ := gorm.Open(mysql.Open(dsn))
-	g := NewGenerator(Config{
-		db:      db,
-		OutPath: "./query",
-		Mode:    WithoutContext | WithDefaultQuery | WithQueryInterface,
-	})
-
-	uw := g.GenerateModel("z_user_wallet")
-	g.ApplyBasic(uw)
-	//g.ApplyBasic(&model.ZUserWallet{})
-	g.Execute()
-	t.Error(1)
-}
