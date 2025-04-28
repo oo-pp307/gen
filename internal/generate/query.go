@@ -9,9 +9,9 @@ import (
 	"gorm.io/gorm"
 	"gorm.io/gorm/schema"
 
-	"gorm.io/gen/field"
-	"gorm.io/gen/internal/model"
-	"gorm.io/gen/internal/parser"
+	"github.com/oo-pp307/gen/field"
+	"github.com/oo-pp307/gen/internal/model"
+	"github.com/oo-pp307/gen/internal/parser"
 )
 
 type FieldParser interface {
@@ -87,6 +87,11 @@ func (b *QueryStructMeta) getFieldRealType(f reflect.Type) string {
 	if f.Implements(serializerInterface) || reflect.New(f).Type().Implements(serializerInterface) {
 		return "serializer"
 	}
+
+	if f.String() == "decimal.Decimal" {
+		return "decimal"
+	}
+
 	scanValuer := reflect.TypeOf((*field.ScanValuer)(nil)).Elem()
 	if f.Implements(scanValuer) || reflect.New(f).Type().Implements(scanValuer) {
 		return "field"

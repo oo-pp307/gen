@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 
-	"gorm.io/gen/field"
+	"github.com/oo-pp307/gen/field"
 )
 
 // Object an object interface

@@ -4,8 +4,8 @@ import (
 	"context"
 	"sync"
 
-	"gorm.io/gen/tests/.expect/dal_test/query"
-	relquery "gorm.io/gen/tests/.expect/dal_test_relation/query"
+	"github.com/oo-pp307/gen/tests/.expect/dal_test/query"
+	relquery "github.com/oo-pp307/gen/tests/.expect/dal_test_relation/query"
 )
 
 var useOnce sync.Once

@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"strings"
 
-	"gorm.io/gen/field"
+	"github.com/oo-pp307/gen/field"
 	"gorm.io/gorm"
 )
 

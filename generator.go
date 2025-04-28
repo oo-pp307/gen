@@ -19,12 +19,12 @@ import (
 	"gorm.io/gorm"
 	"gorm.io/gorm/schema"
 
-	"gorm.io/gen/helper"
-	"gorm.io/gen/internal/generate"
-	"gorm.io/gen/internal/model"
-	"gorm.io/gen/internal/parser"
-	tmpl "gorm.io/gen/internal/template"
-	"gorm.io/gen/internal/utils/pools"
+	"github.com/oo-pp307/gen/helper"
+	"github.com/oo-pp307/gen/internal/generate"
+	"github.com/oo-pp307/gen/internal/model"
+	"github.com/oo-pp307/gen/internal/parser"
+	tmpl "github.com/oo-pp307/gen/internal/template"
+	"github.com/oo-pp307/gen/internal/utils/pools"
 )
 
 // T generic type
