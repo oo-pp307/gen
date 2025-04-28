@@ -115,6 +115,12 @@ func NewFloat64(table, column string, opts ...Option) Float64 {
 	return Float64{expr: expr{col: toColumn(table, column, opts...)}}
 }
 
+// ========================= decimal =======================
+// NewDecimal ...
+func NewDecimal(table, column string, opts ...Option) Decimal {
+	return Decimal{expr: expr{col: toColumn(table, column, opts...)}}
+}
+
 // ======================== string =======================
 
 // NewString ...

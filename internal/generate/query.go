@@ -83,12 +83,13 @@ func (b *QueryStructMeta) parseStruct(st interface{}) error {
 
 // getFieldRealType  get basic type of field
 func (b *QueryStructMeta) getFieldRealType(f reflect.Type) string {
+
 	serializerInterface := reflect.TypeOf((*schema.SerializerInterface)(nil)).Elem()
 	if f.Implements(serializerInterface) || reflect.New(f).Type().Implements(serializerInterface) {
 		return "serializer"
 	}
 
-	if f.String() == "decimal.Decimal" {
+	if strings.Contains(f.String(), "Decimal") {
 		return "decimal"
 	}
 

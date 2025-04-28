@@ -2,6 +2,7 @@ package model
 
 import (
 	"bytes"
+	"fmt"
 	"strings"
 
 	"github.com/oo-pp307/gen/field"
@@ -120,7 +121,7 @@ var (
 		"float":      func(string) string { return "float32" },
 		"real":       func(string) string { return "float64" },
 		"double":     func(string) string { return "float64" },
-		"decimal":    func(string) string { return "float64" },
+		"decimal":    func(string) string { return "decimal.Decimal" },
 		"char":       func(string) string { return "string" },
 		"varchar":    func(string) string { return "string" },
 		"tinytext":   func(string) string { return "string" },
@@ -198,7 +199,9 @@ func (m *Field) GenType() string {
 	if m.CustomGenType != "" {
 		return m.CustomGenType
 	}
+
 	typ := strings.TrimLeft(m.Type, "*")
+	fmt.Println(m.Type)
 	switch typ {
 	case "string", "bytes":
 		return strings.Title(typ)
@@ -214,6 +217,8 @@ func (m *Field) GenType() string {
 		return "Bytes"
 	case "serializer":
 		return "Serializer"
+	case "decimal.Decimal", "decimal":
+		return "Decimal"
 	default:
 		return "Field"
 	}
