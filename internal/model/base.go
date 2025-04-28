@@ -2,7 +2,6 @@ package model
 
 import (
 	"bytes"
-	"fmt"
 	"strings"
 
 	"github.com/oo-pp307/gen/field"
@@ -201,7 +200,6 @@ func (m *Field) GenType() string {
 	}
 
 	typ := strings.TrimLeft(m.Type, "*")
-	fmt.Println(m.Type)
 	switch typ {
 	case "string", "bytes":
 		return strings.Title(typ)
