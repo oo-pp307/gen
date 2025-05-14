@@ -5,7 +5,6 @@ go 1.24
 require (
 	golang.org/x/tools v0.17.0
 	gorm.io/datatypes v1.2.4
-	gorm.io/driver/mysql v1.5.7
 	gorm.io/gorm v1.25.12
 	gorm.io/hints v1.1.0
 	gorm.io/plugin/dbresolver v1.5.3
@@ -19,4 +18,5 @@ require (
 	github.com/jinzhu/now v1.1.5 // indirect
 	golang.org/x/mod v0.14.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
+	gorm.io/driver/mysql v1.5.7 // indirect
 )
