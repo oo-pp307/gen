@@ -23,7 +23,7 @@ formatters:
     goimports:
       local-prefixes:
         - gorm.io
-        - gorm.io/gen
+        - github.com/oo-pp307/gen
   exclusions:
     generated: lax
     paths:

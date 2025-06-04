@@ -1,10 +1,11 @@
-module gorm.io/gen
+module github.com/oo-pp307/gen
 
 go 1.18
 
 require (
 	golang.org/x/tools v0.17.0
 	gorm.io/datatypes v1.2.4
+	gorm.io/gen v0.3.27
 	gorm.io/gorm v1.25.12
 	gorm.io/hints v1.1.0
 	gorm.io/plugin/dbresolver v1.5.3

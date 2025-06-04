@@ -6,9 +6,9 @@ import (
 	"regexp"
 	"strings"
 
-	"gorm.io/gen/field"
-	"gorm.io/gen/internal/generate"
-	"gorm.io/gen/internal/model"
+	"github.com/oo-pp307/gen/field"
+	"github.com/oo-pp307/gen/internal/generate"
+	"github.com/oo-pp307/gen/internal/model"
 	"gorm.io/gorm/schema"
 )
 
