@@ -87,3 +87,23 @@ func (field Field) toSlice(values ...driver.Valuer) []interface{} {
 	}
 	return slice
 }
+
+// Add ...
+func (field Field) Add(value float64) Field {
+	return Field{field.add(value)}
+}
+
+// Sub ...
+func (field Field) Sub(value float64) Field {
+	return Field{field.sub(value)}
+}
+
+// Mul ...
+func (field Field) Mul(value float64) Field {
+	return Field{field.mul(value)}
+}
+
+// Div ...
+func (field Field) Div(value float64) Field {
+	return Field{field.div(value)}
+}
