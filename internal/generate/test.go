@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"gorm.io/gen/internal/parser"
+	"github.com/oo-pp307/gen/internal/parser"
 )
 
 //GetTestParamInTmpl return param list

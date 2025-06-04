@@ -1,10 +1,10 @@
 package main
 
 import (
-	"gorm.io/gen"
-	"gorm.io/gen/examples/conf"
-	"gorm.io/gen/examples/dal"
-	"gorm.io/gen/examples/dal/model"
+	"github.com/oo-pp307/gen"
+	"github.com/oo-pp307/gen/examples/conf"
+	"github.com/oo-pp307/gen/examples/dal"
+	"github.com/oo-pp307/gen/examples/dal/model"
 	"gorm.io/gorm"
 )
 
